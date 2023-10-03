@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Statement</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Income Statement</h1>
+        <form method="GET" action="/">
+            <label for="ticker">Ticker Symbol:</label>
+            <input type="text" id="ticker" name="ticker" value="{{ request.args.get('ticker', '') }}"><br>
+            <label for="statement_type">Statement Type:</label>
+            <select id="statement_type" name="statement_type">
+                <option value="financials" {% if request.args.get('statement_type', '') == 'financials' %}selected{% endif %}>Financials</option>
+                <option value="cash-flow" {% if request.args.get('statement_type', '') == 'cash-flow' %}selected{% endif %}>Cash Flow</option>
+                <option value="balance-sheet" {% if request.args.get('statement_type', '') == 'balance-sheet' %}selected{% endif %}>Balance Sheet</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+        {{ table | safe }}
+    </div>
+</body>
+</html>
