@@ -9,11 +9,11 @@ app = Flask(__name__)
 def display_income_statement():
     if request.method == 'POST':
         # Get ticker and statement_type from the submitted form
-        ticker = request.form.get('ticker', 'MSFT')
+        ticker = request.form.get('ticker')
         statement_type = request.form.get('statement_type')
     else:
         # Get ticker and statement_type from URL parameters
-        ticker = request.args.get('ticker', 'MSFT')
+        ticker = request.args.get('ticker', 'Provide a ticker')
         statement_type = request.args.get('statement_type')
 
     # Construct the URL based on the ticker and statement_type
@@ -41,7 +41,7 @@ def display_income_statement():
         'financials': 'Financials',
         'cash-flow': 'Cash-Flow',
         'balance-sheet': 'Balance Sheet'
-    }.get(statement_type, 'Unknown Statement Type')
+    }.get(statement_type, 'Select a statement type')
 
     # Render an HTML template with the data
     return render_template('statement.html', ticker=ticker, statement_type=statement_type_readable, table=statement_df.to_html(classes='table table-striped'))
