@@ -10,11 +10,11 @@ def display_income_statement():
     if request.method == 'POST':
         # Get ticker and statement_type from the submitted form
         ticker = request.form.get('ticker', 'MSFT')
-        statement_type = request.form.get('statement_type', 'financials')
+        statement_type = request.form.get('statement_type')
     else:
         # Get ticker and statement_type from URL parameters
         ticker = request.args.get('ticker', 'MSFT')
-        statement_type = request.args.get('statement_type', 'financials')
+        statement_type = request.args.get('statement_type')
 
     # Construct the URL based on the ticker and statement_type
     url = f"https://sg.finance.yahoo.com/quote/{ticker}/{statement_type}?p={ticker}"
@@ -37,8 +37,14 @@ def display_income_statement():
 
     statement_df = pd.DataFrame.from_dict(statement, orient='index', columns=['Value'])
 
+    statement_type_readable = {
+        'financials': 'Financials',
+        'cash-flow': 'Cash-Flow',
+        'balance-sheet': 'Balance Sheet'
+    }.get(statement_type, 'Unknown Statement Type')
+
     # Render an HTML template with the data
-    return render_template('statement.html', table=statement_df.to_html(classes='table table-striped'))
+    return render_template('statement.html', ticker=ticker, statement_type=statement_type_readable, table=statement_df.to_html(classes='table table-striped'))
 
 if __name__ == '__main__':
     app.run(debug=True)
