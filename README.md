@@ -18,8 +18,6 @@ The financial web scraping app includes the following features:
 4. **URL Construction and Web Scraping**: The code constructs a URL based on user input and uses web scraping techniques (with BeautifulSoup) to extract financial data from Yahoo Finance.
 
 
-5. **Error Handling**: It provides a default message ("Provide a ticker") if a ticker is not provided.
-
 These features provide a foundation for retrieving and displaying financial data, with room for additional enhancements based on user needs and future development goals.
 
 
