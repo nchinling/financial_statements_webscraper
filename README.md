@@ -30,8 +30,8 @@ These features provide a foundation for retrieving and displaying financial data
 
 ## Installation
 
-git clone <repository-url>
-cd <directory>
+git clone repository-url
+cd directory
 
 
 ## Usage
