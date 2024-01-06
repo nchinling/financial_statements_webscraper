@@ -12,7 +12,6 @@ def display_income_statement():
         ticker = request.form.get('ticker')
         statement_type = request.form.get('statement_type')
     else:
-        # Get ticker and statement_type from URL parameters
         ticker = request.args.get('ticker', 'Provide a ticker')
         statement_type = request.args.get('statement_type')
 

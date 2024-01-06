@@ -3,44 +3,46 @@ Financial Statements (web-scraping)
 
 ## Overview
 
-This project uses web-scraping to obtain financial statements (cash-flow, balance sheet and income statement)
+This Flask web application allows users to retrieve financial statements for a specified stock ticker symbol. The app utilizes web scraping techniques to extract financial data from Yahoo Finance. Users can obtain financial statements (cash-flow, balance sheets and income statement). 
 
-## Features
+## Current Features
+
+The financial web scraping app includes the following features:
+
+1. **Retrieve Financial Statements**: Users can enter a stock ticker symbol and select a statement type (Financials, Cash Flow, or Balance Sheet) to retrieve and display the corresponding financial statement.
+
+2. **Display in Table Format**: The financial statement data is displayed in a table format within the web application.
+
+3. **User Interface**: The app provides a simple user interface where users can input the stock ticker symbol and select the statement type through a form.
 
 
-### Feature 1
--
-
-### Feature 2
--
+4. **URL Construction and Web Scraping**: The code constructs a URL based on user input and uses web scraping techniques (with BeautifulSoup) to extract financial data from Yahoo Finance.
 
 
-### Feature 3
--
+5. **Error Handling**: It provides a default message ("Provide a ticker") if a ticker is not provided.
+
+These features provide a foundation for retrieving and displaying financial data, with room for additional enhancements based on user needs and future development goals.
+
 
 ## Technologies Used
 
 - API
-- web-scraping
-- Python NumPy and Pandas
-- BeautifulSoup 
+- Pandas
+- BeautifulSoup for web-scraping
 - Flask
 
 ## Installation
 
-Provide instructions on how to install and set up your project locally. Include any dependencies or prerequisites.
+git clone <repository-url>
+cd <directory>
+
 
 ## Usage
 
-Explain how users can use your project, including any necessary commands or steps.
+python app.py
+Open your web browser and go to http://127.0.0.1:5000/
 
-## Screenshots
 
-If applicable, include screenshots or visuals that showcase your project's user interface or functionality.
-
-## Roadmap
-
-Outline your project's future plans, including potential new features or improvements you plan to implement.
 
 
 
