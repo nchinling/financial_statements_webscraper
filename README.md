@@ -1,5 +1,4 @@
-# Project Title
-Financial Statements (web-scraping)
+# Financial Statements (web-scraping)
 
 ## Overview
 
